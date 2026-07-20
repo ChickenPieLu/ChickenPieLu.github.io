@@ -50,7 +50,7 @@ a { color: inherit; }
 .nav-links a:hover, .nav-links a:focus-visible, .nav-email:hover, .nav-email:focus-visible { color: var(--blue); }
 .nav-email { padding-left: 28px; border-left: 1px solid var(--line); }
 
-.hero { min-height: 720px; padding-block: 128px 108px; display: grid; grid-template-columns: minmax(0, 1fr) 330px; align-items: end; gap: 92px; }
+.hero { min-height: clamp(620px, calc(100svh - 76px), 760px); padding-block: clamp(48px, 7vh, 72px) clamp(48px, 6vh, 68px); display: grid; grid-template-columns: minmax(0, 1fr) 330px; align-items: start; gap: 92px; }
 .eyebrow, .card-kicker {
   margin: 0 0 22px; color: var(--blue); font-size: 12px; font-weight: 750;
   letter-spacing: 0.12em; text-transform: uppercase;
@@ -66,7 +66,7 @@ h1 span { color: var(--blue); }
 .button-primary:hover { background: #1f406f; box-shadow: 0 14px 30px rgba(41, 77, 130, 0.24); }
 .text-link { color: #4f5c72; font-size: 14px; font-weight: 700; text-decoration: none; border-bottom: 1px solid #b8c1ce; }
 .text-link:hover { color: var(--blue); border-color: var(--blue); }
-.hero-note { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+.hero-note { align-self: end; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
 .note-label { margin: 0 0 14px; color: var(--blue); font-size: 11px; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
 .hero-note > p:nth-child(2) { margin: 0; font-size: 18px; line-height: 1.55; }
 .note-meta { display: flex; justify-content: space-between; gap: 16px; margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; letter-spacing: .07em; text-transform: uppercase; }
