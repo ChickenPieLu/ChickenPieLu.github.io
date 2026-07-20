@@ -1,12 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuhe's Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yuhe Lu is a Mathematics and Computing Science student building reliable, efficient, and practical machine learning systems.">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yuhe Lu — Mathematics &amp; Computing Science">
+  <meta property="og:description" content="Machine learning, computer vision, and ML systems projects by Yuhe Lu.">
+  <meta property="og:image" content="og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yuhe Lu — Mathematics &amp; Computing Science">
+  <meta name="twitter:description" content="Machine learning, computer vision, and ML systems projects by Yuhe Lu.">
+  <meta name="twitter:image" content="og.png">
+  <title>Yuhe Lu — Mathematics &amp; Computing Science</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Hello, I'm Yuhe.</h1>
-    <p>This is my personal website.</p>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="wordmark" href="#home" aria-label="Yuhe Lu, home">
+        <span>YL</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-email" href="mailto:chickenpie_lu@outlook.com">Email me <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Mathematics &amp; Computing Science Student</p>
+        <h1 id="hero-title">Building reliable machine learning systems for <span>real-world problems.</span></h1>
+        <p class="hero-intro">I’m Yuhe Lu <span lang="zh-CN">陆禹翮</span>, a University of Glasgow student interested in machine learning, computer vision, and the systems that make intelligent models practical.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View projects <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://github.com/ChickenPieLu" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="mailto:chickenpie_lu@outlook.com">Email <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <aside class="hero-note reveal" aria-label="Current focus">
+        <p class="note-label">Currently</p>
+        <p>Developing and evaluating a U-Net model for crop residue semantic segmentation.</p>
+        <div class="note-meta">
+          <span>01 / Active work</span>
+          <span>2026</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <div class="section-heading reveal">
+        <p class="section-index">01</p>
+        <h2 id="about-title">About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="lead">I enjoy learning by building complete systems—from understanding the underlying principles to implementing, evaluating, and improving working solutions.</p>
+          <p>My interests lie at the intersection of machine learning and computer systems, particularly computer vision, reliable and efficient machine learning, and the deployment of intelligent systems in real-world settings.</p>
+          <p>I am currently developing a semantic segmentation pipeline for estimating crop residue coverage from field images, working across preprocessing, baselines, model development, evaluation, visualisation, and cross-location generalisation.</p>
+        </div>
+
+        <article class="education-card reveal">
+          <div class="card-topline">
+            <p class="card-kicker">Education</p>
+            <span>Expected 2027</span>
+          </div>
+          <h3>University of Glasgow</h3>
+          <p class="degree">BSc (Hons) Mathematics and Computing Science</p>
+          <p class="location">Glasgow, United Kingdom · 2022–2027</p>
+          <div class="interest-list" aria-label="Relevant interests">
+            <span>Machine Learning</span>
+            <span>Computer Vision</span>
+            <span>Algorithms</span>
+            <span>Networked Systems</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading reveal">
+        <p class="section-index">02</p>
+        <h2 id="projects-title">Selected project</h2>
+      </div>
+
+      <article class="project-card reveal">
+        <div class="project-visual" aria-label="Project image placeholder">
+          <div class="visual-panel visual-original">
+            <span class="panel-number">01</span>
+            <span class="field-texture" aria-hidden="true"></span>
+            <p>Original field image</p>
+          </div>
+          <div class="visual-panel visual-mask">
+            <span class="panel-number">02</span>
+            <span class="mask-shape" aria-hidden="true"></span>
+            <p>Ground-truth mask</p>
+          </div>
+          <div class="visual-panel visual-prediction">
+            <span class="panel-number">03</span>
+            <span class="prediction-shape" aria-hidden="true"></span>
+            <p>U-Net prediction</p>
+          </div>
+          <p class="visual-caption">Project imagery placeholder — ready for a real original / mask / prediction comparison.</p>
+        </div>
+
+        <div class="project-content">
+          <div class="project-title-row">
+            <div>
+              <p class="card-kicker">Computer vision · In progress</p>
+              <h3>Crop Residue Coverage Estimation</h3>
+            </div>
+            <a class="round-link" href="https://github.com/ChickenPieLu/residue_coverage" target="_blank" rel="noreferrer" aria-label="Open Crop Residue Coverage Estimation on GitHub">↗</a>
+          </div>
+
+          <p class="project-summary">A computer vision pipeline that segments crop residue from field images and estimates coverage percentage, with a focus on generalisation across locations and environmental conditions.</p>
+
+          <div class="project-details">
+            <div>
+              <h4>Problem</h4>
+              <p>Turn field imagery into a consistent, automated estimate of residue coverage while handling visual variation between collection sites.</p>
+            </div>
+            <div>
+              <h4>Approach</h4>
+              <p>Progressed from a Random Forest pixel classifier to a compact U-Net semantic segmentation pipeline built in PyTorch.</p>
+            </div>
+            <div>
+              <h4>Evaluation</h4>
+              <p>Compares IoU, Dice, precision, recall, and coverage error, with holdout experiments designed to expose domain shift.</p>
+            </div>
+          </div>
+
+          <div class="contribution-block">
+            <h4>My contribution</h4>
+            <ul>
+              <li>Built the image and TIFF-mask pairing, preprocessing, and data-loading pipeline.</li>
+              <li>Designed the Random Forest baseline and implemented a Mini U-Net in PyTorch.</li>
+              <li>Created image-level splits, evaluation metrics, and prediction visualisations.</li>
+              <li>Investigated cross-location generalisation and domain-shift failure modes.</li>
+            </ul>
+          </div>
+
+          <div class="tag-list" aria-label="Project technologies">
+            <span>Python</span><span>PyTorch</span><span>OpenCV</span><span>scikit-learn</span><span>U-Net</span><span>Semantic Segmentation</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="future-project reveal">
+        <p class="card-kicker">Next</p>
+        <p>More work will be added here, including my final-year project and future research-focused builds.</p>
+      </div>
+    </section>
+
+    <section class="section container" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading reveal">
+        <p class="section-index">03</p>
+        <h2 id="skills-title">Skills &amp; interests</h2>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-group">
+          <p>Programming</p>
+          <ul><li>Python</li><li>HTML, CSS &amp; JavaScript</li></ul>
+        </div>
+        <div class="skill-group">
+          <p>ML &amp; computer vision</p>
+          <ul><li>PyTorch · scikit-learn</li><li>OpenCV · NumPy</li><li>CNNs · U-Net</li><li>Training &amp; evaluation</li></ul>
+        </div>
+        <div class="skill-group">
+          <p>Tools</p>
+          <ul><li>Git &amp; GitHub</li><li>Jupyter Notebook</li><li>VS Code · command line</li></ul>
+        </div>
+        <div class="skill-group interest-group">
+          <p>Research interests</p>
+          <ul><li>Machine Learning Systems</li><li>Reliable &amp; Robust ML</li><li>Efficient Training &amp; Inference</li><li>Domain Generalisation</li><li>Distributed Intelligent Systems</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner reveal">
+        <p class="eyebrow">Let’s connect</p>
+        <h2 id="contact-title">Interested in research, internships, and practical ML problems.</h2>
+        <p>If you’d like to discuss an opportunity, a project, or a shared research interest, feel free to get in touch.</p>
+        <div class="contact-actions">
+          <a class="button button-light" href="mailto:chickenpie_lu@outlook.com">Send an email <span aria-hidden="true">↗</span></a>
+          <a class="contact-link" href="https://github.com/ChickenPieLu" target="_blank" rel="noreferrer">github.com/ChickenPieLu <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Yuhe Lu <span lang="zh-CN">陆禹翮</span></p>
+      <p>Designed for clarity. Built with semantic HTML.</p>
+      <p>© <span id="year">2026</span></p>
+    </div>
+  </footer>
 </body>
 </html>
