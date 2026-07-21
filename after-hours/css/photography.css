@@ -1,0 +1,23 @@
+/* Series pages are intentionally composed by hand. Combine these classes per series. */
+.series-intro { padding-block: clamp(90px, 15vw, 180px); }
+.series-intro h1 { margin-bottom: 26px; }
+.series-sequence { padding-bottom: 140px; }
+.series-frame { margin: 0 auto; }
+.series-frame img { width: 100%; }
+.series-wide { width: min(calc(100% - 48px), 1420px); }
+.series-pair { width: min(calc(100% - 64px), 1180px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 3vw, 42px); }
+.series-portrait { width: min(calc(100% - 64px), 640px); margin-left: max(32px, 13vw); }
+.series-small-right { width: min(calc(100% - 64px), 620px); margin-right: max(32px, 10vw); }
+.series-space-sm { margin-top: clamp(70px, 10vw, 140px); }
+.series-space-lg { margin-top: clamp(150px, 23vw, 340px); }
+.series-text { width: min(calc(100% - 64px), 560px); margin-left: max(32px, 22vw); color: #b8afa5; font-size: clamp(1.1rem, 2vw, 1.45rem); }
+.series-frame figcaption { margin-top: 12px; }
+.series-credits { width: min(calc(100% - 64px), 760px); margin: 0 auto; padding-block: 72px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 40px; border-top: 1px solid var(--border); }
+.series-credits div { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); }
+.series-credits dt { color: var(--text); }
+@media (max-width: 680px) {
+  .series-pair { grid-template-columns: 1fr; }
+  .series-portrait, .series-small-right, .series-text { margin-inline: auto; }
+  .series-space-lg { margin-top: 120px; }
+  .series-credits { grid-template-columns: 1fr; }
+}
