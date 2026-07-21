@@ -1,6 +1,7 @@
 /* Series pages are intentionally composed by hand. Combine these classes per series. */
-.series-intro { padding-block: clamp(90px, 15vw, 180px); }
+.series-intro { padding-block: clamp(46px, 7vw, 78px) clamp(38px, 5vw, 58px); }
 .series-intro h1 { margin-bottom: 26px; }
+.series-intro h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); }
 .series-sequence { padding-bottom: 140px; }
 .series-frame { margin: 0 auto; }
 .series-frame img { width: 100%; }
