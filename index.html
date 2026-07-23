@@ -63,16 +63,22 @@
     </section>
 
     <section class="section container" id="about" aria-labelledby="about-title">
-      <div class="section-heading reveal">
-        <p class="section-index">01</p>
-        <h2 id="about-title">About</h2>
-      </div>
       <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="lead">I build machine learning systems that are supposed to work in the real world — then I find out where they don't.</p>
-          <p>What interests me most isn't getting a model to perform well once, but it's whether it keeps working after the conditions around it change: <b>new locations, more data than it saw in training, use it wasn't originally built for.</b></p>
-          <p>My clearest example so far is a project segmenting crop residue in field images. The model did well in testing, but accuracy fell on locations it hadn't seen before, and it did worst on the highest-coverage images — a condition the training data barely represented. That failure taught me more about what "reliable" actually requires than any of the cases where the model worked fine.</p>
+        <div class="about-main">
+          <div class="section-heading reveal">
+            <p class="section-index">01</p>
+            <h2 id="about-title">About</h2>
+          </div>
+          <div class="about-copy reveal">
+            <p class="lead">I build machine learning systems that are supposed to work in the real world — then I find out where they don't.</p>
+            <p>What interests me most isn't getting a model to perform well once, but it's whether it keeps working after the conditions around it change: <b>new locations, more data than it saw in training, use it wasn't originally built for.</b></p>
+            <p>My clearest example so far is a project segmenting crop residue in field images. The model did well in testing, but accuracy fell on locations it hadn't seen before, and it did worst on the highest-coverage images — a condition the training data barely represented. That failure taught me more about what "reliable" actually requires than any of the cases where the model worked fine.</p>
+          </div>
         </div>
+
+        <figure class="about-portrait reveal">
+          <img src="assets/images/about-portrait-placeholder-cat.jpg" width="1122" height="1402" loading="lazy" alt="Temporary portrait placeholder showing a grey-and-white cat.">
+        </figure>
 
         <article class="education-card reveal">
           <div class="card-topline">
@@ -99,30 +105,15 @@
       </div>
 
       <article class="project-card reveal">
-        <div class="project-visual" aria-label="Project image placeholder">
-          <div class="visual-panel visual-original">
-            <span class="panel-number">01</span>
-            <span class="field-texture" aria-hidden="true"></span>
-            <p>Original field image</p>
-          </div>
-          <div class="visual-panel visual-mask">
-            <span class="panel-number">02</span>
-            <span class="mask-shape" aria-hidden="true"></span>
-            <p>Ground-truth mask</p>
-          </div>
-          <div class="visual-panel visual-prediction">
-            <span class="panel-number">03</span>
-            <span class="prediction-shape" aria-hidden="true"></span>
-            <p>U-Net prediction</p>
-          </div>
-          <p class="visual-caption">Project imagery placeholder — ready for a real original / mask / prediction comparison.</p>
-        </div>
+        <figure class="project-visual">
+          <img src="assets/images/crop-residue-test-result-row.png" width="1377" height="318" loading="lazy" alt="A representative crop-residue segmentation result comparing the original field image, ground-truth mask, U-Net prediction, and false-positive and false-negative error map.">
+        </figure>
 
         <div class="project-content">
           <div class="project-title-row">
             <div>
               <p class="card-kicker">Computer vision · In progress</p>
-              <h3>Crop Residue Coverage Estimation</h3>
+              <h3>1.  Crop Residue Coverage Estimation</h3>
             </div>
             <a class="round-link" href="https://github.com/ChickenPieLu/residue_coverage" target="_blank" rel="noreferrer" aria-label="Open Crop Residue Coverage Estimation on GitHub">↗</a>
           </div>

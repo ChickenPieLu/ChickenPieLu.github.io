@@ -142,29 +142,27 @@ h1 span { color: var(--blue); }
 .section-heading { display: flex; align-items: baseline; gap: 24px; margin-bottom: 58px; }
 .section-index { margin: 0; color: var(--blue); font: 750 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
 h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-spacing: -0.04em; font-weight: 650; }
-.about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 88px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px 88px; align-items: stretch; }
+.about-main { min-width: 0; }
 .about-copy p { max-width: 680px; margin: 0 0 22px; color: #556e6b; }
 .about-copy .lead { color: var(--ink); font-size: clamp(1.35rem, 2.3vw, 1.85rem); line-height: 1.45; letter-spacing: -0.025em; }
-.education-card { padding: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
-.card-topline { display: flex; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 12px; }
+.about-portrait { position: relative; overflow: hidden; align-self: stretch; min-height: 0; margin: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--blue-soft); box-shadow: var(--shadow); }
+.about-portrait img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 58%; }
+.education-card { grid-column: 1 / -1; display: grid; grid-template-columns: 150px minmax(0, 1.2fr) minmax(260px, .8fr); gap: 8px 40px; align-items: start; padding: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+.card-topline { grid-row: 1 / span 3; display: flex; flex-direction: column; gap: 8px; color: var(--muted); font-size: 12px; }
 .card-kicker { margin-bottom: 16px; }
-.education-card h3 { margin: 36px 0 8px; font-size: 25px; letter-spacing: -0.025em; }
+.education-card .card-kicker { margin: 0; }
+.education-card h3 { grid-column: 2; margin: 0; font-size: 25px; letter-spacing: -0.025em; }
 .degree { margin: 0; color: #425f5d; }
-.location { margin: 8px 0 28px; color: var(--muted); font-size: 14px; }
+.education-card .degree, .education-card .location { grid-column: 2; }
+.location { margin: 0; color: var(--muted); font-size: 14px; }
+.education-card .interest-list { grid-column: 3; grid-row: 1 / span 3; align-self: center; }
 .interest-list, .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .interest-list span, .tag-list span { padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; color: #4e6966; background: #f7fdfc; font-size: 12px; }
 
 .project-card { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); box-shadow: var(--shadow); }
-.project-visual { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); min-height: 330px; padding: 34px 34px 64px; gap: 10px; background: var(--blue-soft); }
-.visual-panel { position: relative; overflow: hidden; min-width: 0; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; color: #294946; background: #f4faf9; }
-.visual-panel p { position: relative; z-index: 2; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .02em; }
-.panel-number { position: relative; z-index: 2; font: 700 10px/1 ui-monospace, monospace; opacity: .65; }
-.field-texture, .mask-shape, .prediction-shape { position: absolute; inset: 0; }
-.field-texture { background: repeating-linear-gradient(154deg, #c6b189 0 11px, #8c7654 12px 18px, #b39a6f 19px 29px, #71805b 30px 35px); filter: saturate(.55); opacity: .78; }
-.mask-shape { background: radial-gradient(ellipse at 25% 30%, #f8fffe 0 10%, transparent 11%), radial-gradient(ellipse at 70% 60%, #f8fffe 0 16%, transparent 17%), radial-gradient(ellipse at 35% 78%, #f8fffe 0 14%, transparent 15%), #175f5c; }
-.prediction-shape { background: radial-gradient(ellipse at 28% 33%, #a8efec 0 12%, transparent 13%), radial-gradient(ellipse at 68% 59%, #a8efec 0 18%, transparent 19%), radial-gradient(ellipse at 38% 77%, #a8efec 0 12%, transparent 13%), #137f7b; }
-.visual-mask p, .visual-mask .panel-number, .visual-prediction p, .visual-prediction .panel-number { color: white; }
-.visual-caption { position: absolute; bottom: 21px; left: 36px; margin: 0; color: #617875; font-size: 12px; }
+.project-visual { margin: 0; border-bottom: 1px solid var(--line); background: #ffffff; }
+.project-visual img { display: block; width: 100%; height: auto; opacity: .82; filter: blur(.45px) saturate(.76) contrast(.96); transform: scale(1.004); }
 .project-content { padding: 54px; }
 .project-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; }
 .project-title-row h3 { max-width: 680px; margin: 0; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; letter-spacing: -.04em; }
@@ -215,6 +213,9 @@ h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-s
   .hero { min-height: calc(100svh - 76px); padding-block: clamp(64px, 10vh, 90px); }
   .hero-note { max-width: 480px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-portrait { height: 420px; }
+  .about-portrait img { height: 100%; }
+  .education-card { grid-column: 1; grid-template-columns: 130px minmax(0, 1.2fr) minmax(220px, .8fr); gap-inline: 28px; }
   .project-details { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .skill-group, .skill-group:first-child, .skill-group:last-child { min-height: 0; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -239,8 +240,11 @@ h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-s
   .section { padding-block: 76px; }
   .section-heading { margin-bottom: 40px; }
   .about-copy .lead { font-size: 1.35rem; }
-  .education-card { padding: 26px; }
-  .project-visual { grid-template-columns: 1fr; min-height: 570px; padding: 20px 20px 58px; }
+  .about-portrait { height: 360px; }
+  .education-card { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 26px; }
+  .education-card h3, .education-card .degree, .education-card .location, .education-card .interest-list { grid-column: 1; grid-row: auto; }
+  .education-card .card-topline { grid-column: 1; grid-row: auto; flex-direction: row; justify-content: space-between; margin-bottom: 18px; }
+  .education-card .interest-list { margin-top: 18px; }
   .project-content { padding: 34px 24px; }
   .project-title-row h3 { font-size: 2.1rem; }
   .round-link { width: 44px; height: 44px; }
