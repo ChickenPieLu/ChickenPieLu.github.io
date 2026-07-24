@@ -170,8 +170,15 @@ h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-s
 .round-link:hover { transform: translateY(-2px); color: white; background: var(--blue-dark); }
 .project-summary { max-width: 850px; margin: 30px 0 46px; color: #536c69; font-size: 18px; }
 .project-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-block: 38px; border-block: 1px solid var(--line); }
-.project-details h4, .contribution-block h4 { margin: 0 0 12px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.project-details h4, .results-block h4, .contribution-block h4 { margin: 0 0 12px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
 .project-details p { margin: 0; color: var(--muted); font-size: 14px; }
+.results-block { display: grid; grid-template-columns: 160px 1fr; gap: 30px; padding-block: 38px; border-bottom: 1px solid var(--line); }
+.results-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
+.results-grid > div { min-width: 0; padding: 0 22px; border-left: 1px solid var(--line); }
+.results-grid > div:first-child { padding-left: 0; border-left: 0; }
+.results-grid dt { margin: 0 0 8px; color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.results-grid dd { margin: 0; color: var(--ink); font-size: clamp(1.05rem, 1.7vw, 1.35rem); font-weight: 650; line-height: 1.3; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.results-summary { max-width: 800px; margin: 24px 0 0; color: #556e6b; font-size: 14px; }
 .contribution-block { display: grid; grid-template-columns: 160px 1fr; gap: 30px; padding-block: 38px; }
 .contribution-block ul { margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 36px; list-style: none; counter-reset: contributions; }
 .contribution-block li { position: relative; padding-left: 28px; color: #556e6b; font-size: 14px; counter-increment: contributions; }
@@ -217,6 +224,8 @@ h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-s
   .about-portrait img { height: 100%; }
   .education-card { grid-column: 1; grid-template-columns: 130px minmax(0, 1.2fr) minmax(220px, .8fr); }
   .project-details { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 0; }
+  .results-grid > div:nth-child(odd) { padding-left: 0; border-left: 0; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .skill-group, .skill-group:first-child, .skill-group:last-child { min-height: 0; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .skill-group:nth-child(2n) { border-right: 0; }
@@ -249,6 +258,7 @@ h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-s
   .project-title-row h3 { font-size: 2.1rem; }
   .round-link { width: 44px; height: 44px; }
   .project-summary { margin-block: 24px 34px; font-size: 16px; }
+  .results-block { grid-template-columns: 1fr; gap: 12px; }
   .contribution-block { grid-template-columns: 1fr; gap: 12px; }
   .contribution-block ul { grid-template-columns: 1fr; }
   .future-project { align-items: flex-start; flex-direction: column; gap: 10px; }

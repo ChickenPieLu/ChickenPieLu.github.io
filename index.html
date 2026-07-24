@@ -114,41 +114,66 @@
         <div class="project-content">
           <div class="project-title-row">
             <div>
-              <p class="card-kicker">Computer vision · In progress</p>
+              <p class="card-kicker">Completed · Summer 2026</p>
               <h3>1.  Crop Residue Coverage Estimation</h3>
             </div>
             <a class="round-link" href="https://github.com/ChickenPieLu/residue_coverage" target="_blank" rel="noreferrer" aria-label="Open Crop Residue Coverage Estimation on GitHub">↗</a>
           </div>
 
-          <p class="project-summary">A computer vision pipeline that segments crop residue from field images and estimates coverage percentage, with a focus on generalisation across locations and environmental conditions.</p>
+          <p class="project-summary">An end-to-end computer vision project for segmenting crop residue in field images and estimating surface coverage, with a focus on generalisation across collection sites.</p>
 
           <div class="project-details">
             <div>
               <h4>Problem</h4>
-              <p>Turn field imagery into a consistent, automated estimate of residue coverage while handling visual variation between collection sites.</p>
+              <p>Automate residue coverage measurement from field photographs despite changes in soil, lighting, vegetation, and camera conditions.</p>
             </div>
             <div>
               <h4>Approach</h4>
-              <p>Progressed from a Random Forest pixel classifier to a compact U-Net semantic segmentation pipeline built in PyTorch.</p>
+              <p>Established a Random Forest baseline, built a Mini U-Net from scratch, and developed a stronger U-Net with an ImageNet-pretrained ResNet34 encoder using segmentation_models_pytorch.</p>
             </div>
             <div>
               <h4>Evaluation</h4>
-              <p>Compares IoU, Dice, precision, recall, and coverage error, with holdout experiments designed to expose domain shift.</p>
+              <p>Used location-level training, validation, and held-out test splits, evaluated with IoU, Dice, precision, recall, and coverage MAE, and tested SRPNet as an external cross-domain reference.</p>
             </div>
           </div>
+
+          <section class="results-block" aria-labelledby="project-results-title">
+            <h4 id="project-results-title">Results</h4>
+            <div class="results-content">
+              <dl class="results-grid">
+                <div>
+                  <dt>Best model</dt>
+                  <dd>ResNet34 U-Net</dd>
+                </div>
+                <div>
+                  <dt>Test IoU</dt>
+                  <dd>0.826</dd>
+                </div>
+                <div>
+                  <dt>Test Dice</dt>
+                  <dd>0.905</dd>
+                </div>
+                <div>
+                  <dt>Coverage MAE</dt>
+                  <dd aria-label="7.71 percentage points">7.71 pp</dd>
+                </div>
+              </dl>
+              <p class="results-summary">Compared with the Mini U-Net, the final model improved IoU from 0.778 to 0.826 and reduced coverage MAE from 11.73 to 7.71 percentage points.</p>
+            </div>
+          </section>
 
           <div class="contribution-block">
             <h4>My contribution</h4>
             <ul>
-              <li>Built the image and TIFF-mask pairing, preprocessing, and data-loading pipeline.</li>
-              <li>Designed the Random Forest baseline and implemented a Mini U-Net in PyTorch.</li>
-              <li>Created image-level splits, evaluation metrics, and prediction visualisations.</li>
-              <li>Investigated cross-location generalisation and domain-shift failure modes.</li>
+              <li>Built the image–mask pairing, preprocessing, augmentation, and PyTorch data-loading pipeline.</li>
+              <li>Created a Random Forest baseline and implemented a compact Mini U-Net from scratch.</li>
+              <li>Developed the final ResNet34 U-Net with transfer learning, BCE–Dice loss, early stopping, and reproducible evaluation.</li>
+              <li>Investigated cross-location domain shift, compared against the external SRPNet model, visualised failure cases, and identified label quality as an evaluation limitation.</li>
             </ul>
           </div>
 
           <div class="tag-list" aria-label="Project technologies">
-            <span>Python</span><span>PyTorch</span><span>OpenCV</span><span>scikit-learn</span><span>U-Net</span><span>Semantic Segmentation</span>
+            <span>Python</span><span>PyTorch</span><span>segmentation_models_pytorch</span><span>scikit-learn</span><span>U-Net</span><span>ResNet34</span><span>Semantic Segmentation</span><span>Transfer Learning</span>
           </div>
         </div>
       </article>
