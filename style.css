@@ -115,7 +115,12 @@ a { color: inherit; }
   background: linear-gradient(90deg, rgba(255, 255, 255, .64) 0%, rgba(255, 255, 255, .28) 58%, rgba(255, 255, 255, .1) 100%);
 }
 .hero-copy {
+  --hero-accent-offset: clamp(24px, 3vw, 40px);
   padding: 0;
+}
+.hero-statement {
+  padding-left: var(--hero-accent-offset);
+  border-left: 2px solid var(--blue);
 }
 .eyebrow, .card-kicker {
   margin: 0 0 22px; color: var(--blue); font-size: 12px; font-weight: 750;
@@ -125,7 +130,7 @@ a { color: inherit; }
 h1 { max-width: 850px; margin: 0; font-size: clamp(3rem, 6vw, 5.65rem); line-height: 0.98; letter-spacing: -0.057em; font-weight: 650; }
 h1 span { color: var(--blue); }
 .hero-intro { max-width: 700px; margin: 34px 0 0; color: #496461; font-size: clamp(1.05rem, 1.5vw, 1.25rem); line-height: 1.7; }
-.hero-actions { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 28px; margin-top: clamp(56px, 8vh, 78px); }
+.hero-actions { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 28px; margin-top: clamp(56px, 8vh, 78px); margin-left: calc(var(--hero-accent-offset) + 2px); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 52px; padding: 0 22px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease; }
 .button:hover { transform: translateY(-2px); }
 .button-primary { color: white; background: var(--blue-dark); box-shadow: 0 10px 25px rgba(8, 125, 121, 0.2); }
@@ -143,7 +148,11 @@ h1 span { color: var(--blue); }
 .section-index { margin: 0; color: var(--blue); font: 750 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
 h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-spacing: -0.04em; font-weight: 650; }
 .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px 88px; align-items: stretch; }
-.about-main { min-width: 0; }
+.about-main {
+  min-width: 0;
+  padding-left: clamp(24px, 3vw, 40px);
+  border-left: 2px solid var(--blue);
+}
 .about-copy p { max-width: 680px; margin: 0 0 22px; color: #556e6b; }
 .about-copy .lead { color: var(--ink); font-size: clamp(1.35rem, 2.3vw, 1.85rem); line-height: 1.45; letter-spacing: -0.025em; }
 .about-portrait { position: relative; overflow: hidden; align-self: stretch; min-height: 0; margin: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--blue-soft); box-shadow: var(--shadow); }
@@ -242,6 +251,8 @@ h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-s
   .nav-menu { top: calc(100% + 17px); }
   .nav-email { display: none; }
   .hero { min-height: calc(100svh - 66px); padding-block: 48px; }
+  .hero-copy { --hero-accent-offset: 20px; }
+  .about-main { padding-left: 20px; }
   .hero::before { opacity: .72; }
   h1 { font-size: clamp(2.75rem, 13.5vw, 4rem); }
   .hero-intro { margin-top: 28px; }

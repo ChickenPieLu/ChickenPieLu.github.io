@@ -1,22 +1,76 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>After Hours — Yuhe Lu</title>
-  <meta name="description" content="Music, photographs, instruments, and fragments collected by Yuhe Lu outside ordinary working hours.">
-  <meta property="og:title" content="After Hours — Yuhe Lu"><meta property="og:description" content="A personal archive of music, photographs, and fragments."><meta property="og:image" content="./assets/images/home/music.jpg">
-  <link rel="icon" href="./../favicon.png"><link rel="stylesheet" href="./css/global.css"><script src="./js/main.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>After Hours — A Creative Archive by Yuhe Lu</title>
+  <meta name="description" content="A late-night archive of music, photographs, notes, demos, and creative fragments by Yuhe Lu.">
+  <meta property="og:title" content="After Hours — Yuhe Lu">
+  <meta property="og:description" content="Music, photographs, notes, and fragments made outside ordinary working hours.">
+  <meta property="og:image" content="./assets/images/photography/singapore-stall.jpg">
+  <link rel="icon" href="./../favicon.png">
+  <link rel="stylesheet" href="./css/global.css">
+  <script src="./js/archive-data.js" defer></script>
+  <script src="./js/main.js" defer></script>
 </head>
-<body class="ambient-page home-page">
-  <a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header"><nav class="nav container" aria-label="Primary"><a class="brand" href="./index.html">YUHE LU / AFTER HOURS</a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button><div class="nav-links" id="nav-links"><a href="./music/index.html">Music</a><a href="./photography/index.html">Photography</a><a href="./notes/index.html">Notes</a><a href="./about/index.html">About</a></div><a class="main-site-link" href="./../index.html">Academic →</a></nav></header>
-  <main id="content" class="landing-shell container">
-    <section class="page-intro home-intro landing-intro"><div><p class="kicker">After Hours</p><h1>Music, photographs, etc.</h1></div><p class="intro-note">What I make, collect, and return to outside ordinary working hours.</p></section>
-    <div class="compact-cover-links" aria-label="After Hours sections">
-      <a class="compact-cover-link" href="./music/index.html"><img src="./assets/images/home/music.jpg" width="1600" height="1066" alt="Electric guitar beside a valve amplifier in a dim rehearsal room"><div class="compact-cover-copy"><h2>Music</h2><span class="meta">Arrangements · Work · Performances</span></div></a>
-      <a class="compact-cover-link" href="./photography/index.html"><img src="./assets/images/photography/singapore-wide.jpg" width="1600" height="846" loading="lazy" alt="Quiet rain-wet street in Singapore at night"><div class="compact-cover-copy"><h2>Photography</h2><span class="meta">Selected Series · Archive</span></div></a>
-      <a class="compact-cover-link" href="./notes/index.html"><img src="./assets/images/home/notes.jpg" width="1600" height="1066" loading="lazy" alt="Notebook, contact sheet, and cassette recorder on a dark desk"><div class="compact-cover-copy"><h2>Notes</h2><span class="meta">Music · Photography · Journal</span></div></a>
-    </div>
+<body class="archive-home">
+  <a class="skip-link" href="#archive">Skip to archive</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="./index.html" aria-current="page">YUHE LU / AFTER HOURS</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="./index.html" aria-current="page">Archive</a>
+        <a href="./about/index.html">About</a>
+      </div>
+      <a class="main-site-link" href="./../index.html">Academic →</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="archive-hero" aria-labelledby="archive-title">
+      <div class="archive-hero-inner container">
+        <div class="archive-hero-statement">
+          <p class="kicker">personal archive</p>
+          <h1 id="archive-title">After Hours</h1>
+          <p>Music videos, photographs, and my memories.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="archive-index container" id="archive" aria-labelledby="archive-heading">
+      <header class="archive-toolbar">
+        <h2 id="archive-heading">The archive</h2>
+        <div class="archive-controls">
+          <div class="archive-filters" aria-label="Filter archive entries">
+            <button type="button" class="archive-filter is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="archive-filter" data-filter="music" aria-pressed="false">Music</button>
+            <button type="button" class="archive-filter" data-filter="photography" aria-pressed="false">Photography</button>
+            <button type="button" class="archive-filter" data-filter="notes" aria-pressed="false">Notes</button>
+          </div>
+          <p class="archive-count" data-archive-count aria-live="polite">7 entries</p>
+        </div>
+      </header>
+
+      <div class="masonry-grid" data-archive-grid>
+        <p class="archive-loading">Opening the archive…</p>
+      </div>
+
+      <noscript>
+        <p class="noscript-note">JavaScript is required for the mixed archive view. The original section archives remain available through the <a href="./music/index.html">music</a>, <a href="./photography/index.html">photography</a>, and <a href="./notes/index.html">notes</a> pages.</p>
+      </noscript>
+    </section>
   </main>
-  <footer class="site-footer"><div class="footer-inner container"><span>Yuhe Lu</span><a href="mailto:chickenpie_lu@outlook.com">Email</a><a href="./../index.html">Academic</a><span>© <span data-current-year>2026</span></span></div></footer>
-</body></html>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <span>Yuhe Lu</span>
+      <a href="mailto:chickenpie_lu@outlook.com">Email</a>
+      <a href="./about/index.html">About</a>
+      <a href="./../index.html">Academic</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </footer>
+</body>
+</html>
