@@ -80,30 +80,24 @@ const renderArchive = (filter = "all") => {
   }
 
   archiveGrid.innerHTML = visibleItems.map((item, index) => {
-    const details = [item.contentType, item.location, item.series].filter(Boolean);
     const image = item.thumbnail
       ? `<div class="archive-card-image">
           <img src="${escapeHtml(item.thumbnail)}" alt="${escapeHtml(item.imageAlt || "")}" loading="lazy"${item.imagePosition ? ` style="object-position: ${escapeHtml(item.imagePosition)}"` : ""}>
         </div>`
       : "";
     const excerpt = item.excerpt ? `<p class="archive-card-excerpt">${escapeHtml(item.excerpt)}</p>` : "";
-    const extra = details.length
-      ? `<p class="archive-card-detail">${details.map(escapeHtml).join(" · ")}</p>`
-      : "";
 
     return `<article class="archive-card archive-card--${escapeHtml(item.tone || "text")} reveal" data-category="${escapeHtml(item.category.toLowerCase())}" style="--reveal-delay: ${Math.min(index, 5) * 55}ms">
       <a class="archive-card-link" href="${escapeHtml(item.href)}" aria-label="Entry ${escapeHtml(item.entryNumber)}: ${escapeHtml(item.title)}">
         ${image}
         <div class="archive-card-body">
           <div class="archive-card-meta">
-            <span>Entry #${escapeHtml(item.entryNumber)}</span>
+            <span>#${escapeHtml(item.entryNumber)}</span>
             <time>${escapeHtml(item.date)}</time>
             <span class="archive-card-category">${escapeHtml(item.category)}</span>
           </div>
           <h3>${escapeHtml(item.title)}</h3>
           ${excerpt}
-          ${extra}
-          <span class="archive-card-arrow" aria-hidden="true">Open entry ↗</span>
         </div>
       </a>
     </article>`;

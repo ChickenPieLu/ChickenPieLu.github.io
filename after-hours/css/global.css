@@ -376,34 +376,13 @@ h1 { max-width: 980px; margin: 0; font-size: clamp(3.7rem, 8vw, 7.6rem); line-he
   font-size: .97rem;
   line-height: 1.62;
 }
-.archive-card-detail {
-  margin: 22px 0 0;
-  padding-top: 15px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font: 9px Arial, sans-serif;
-  letter-spacing: .11em;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-.archive-card-arrow {
-  display: inline-block;
-  margin-top: 26px;
-  color: var(--muted);
-  font: 9px Arial, sans-serif;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  transition: color 180ms ease;
-}
 .archive-card-link:hover .archive-card-image img,
 .archive-card-link:focus-visible .archive-card-image img {
   transform: scale(1.012);
   filter: brightness(.84) saturate(.76) sepia(.04);
 }
 .archive-card-link:hover h3,
-.archive-card-link:focus-visible h3,
-.archive-card-link:hover .archive-card-arrow,
-.archive-card-link:focus-visible .archive-card-arrow { color: var(--amber); }
+.archive-card-link:focus-visible h3 { color: var(--amber); }
 .archive-loading,
 .noscript-note {
   color: var(--muted);
