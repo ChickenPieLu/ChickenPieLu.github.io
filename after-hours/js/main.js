@@ -12,6 +12,50 @@ document.querySelectorAll("[data-current-year]").forEach((item) => {
   item.textContent = new Date().getFullYear();
 });
 
+const revealTargets = [
+  ".archive-hero-statement",
+  ".archive-toolbar",
+  ".detail-header",
+  ".series-intro",
+  ".about-grid > *",
+  ".note-media",
+  ".prose",
+  ".media-block",
+  ".work-modules",
+  ".series-frame",
+  ".series-text",
+  ".series-credits",
+  ".back-link"
+].join(", ");
+
+document.querySelectorAll(revealTargets).forEach((item) => {
+  item.classList.add("reveal");
+});
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealObserver = "IntersectionObserver" in window && !reducedMotion
+  ? new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 })
+  : null;
+
+const observeRevealItems = (scope = document) => {
+  scope.querySelectorAll(".reveal:not(.is-visible)").forEach((item) => {
+    if (revealObserver) {
+      revealObserver.observe(item);
+    } else {
+      item.classList.add("is-visible");
+    }
+  });
+};
+
+observeRevealItems();
+
 const archiveGrid = document.querySelector("[data-archive-grid]");
 const archiveCount = document.querySelector("[data-archive-count]");
 const archiveFilters = document.querySelectorAll("[data-filter]");
@@ -31,7 +75,11 @@ const renderArchive = (filter = "all") => {
     ? archiveItems
     : archiveItems.filter((item) => item.category.toLowerCase() === filter);
 
-  archiveGrid.innerHTML = visibleItems.map((item) => {
+  if (revealObserver) {
+    archiveGrid.querySelectorAll(".reveal").forEach((item) => revealObserver.unobserve(item));
+  }
+
+  archiveGrid.innerHTML = visibleItems.map((item, index) => {
     const details = [item.contentType, item.location, item.series].filter(Boolean);
     const image = item.thumbnail
       ? `<div class="archive-card-image">
@@ -43,7 +91,7 @@ const renderArchive = (filter = "all") => {
       ? `<p class="archive-card-detail">${details.map(escapeHtml).join(" · ")}</p>`
       : "";
 
-    return `<article class="archive-card archive-card--${escapeHtml(item.tone || "text")}" data-category="${escapeHtml(item.category.toLowerCase())}">
+    return `<article class="archive-card archive-card--${escapeHtml(item.tone || "text")} reveal" data-category="${escapeHtml(item.category.toLowerCase())}" style="--reveal-delay: ${Math.min(index, 5) * 55}ms">
       <a class="archive-card-link" href="${escapeHtml(item.href)}" aria-label="Entry ${escapeHtml(item.entryNumber)}: ${escapeHtml(item.title)}">
         ${image}
         <div class="archive-card-body">
@@ -60,6 +108,8 @@ const renderArchive = (filter = "all") => {
       </a>
     </article>`;
   }).join("");
+
+  observeRevealItems(archiveGrid);
 
   if (archiveCount) {
     archiveCount.textContent = `${visibleItems.length} ${visibleItems.length === 1 ? "entry" : "entries"}`;
