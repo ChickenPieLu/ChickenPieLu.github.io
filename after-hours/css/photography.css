@@ -5,7 +5,7 @@
 .series-sequence { padding-bottom: 140px; }
 .series-frame { margin: 0 auto; }
 .series-frame img { width: 100%; }
-.series-wide { width: min(calc(100% - 48px), 1420px); }
+.series-wide { width: min(calc(100% - 48px), 1300px); }
 .series-pair { width: min(calc(100% - 64px), 1180px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 3vw, 42px); }
 .series-portrait { width: min(calc(100% - 64px), 640px); margin-left: max(32px, 13vw); }
 .series-small-right { width: min(calc(100% - 64px), 620px); margin-right: max(32px, 10vw); }
