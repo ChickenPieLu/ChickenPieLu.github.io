@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Yuhe Lu</title>
+  <meta name="description" content="Projects by Yuhe Lu: hot-air balloon race replay, solo-to-tab, and crop residue segmentation.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="home-link" href="../index.html">yl</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Projects</a>
+        <a href="../notes/index.html">Notes</a>
+        <a href="https://github.com/ChickenPieLu" target="_blank" rel="noreferrer">GitHub</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="prose">
+      <h1 class="page-title">Projects</h1>
+      <p class="meta">What I'm building now, and what came before.</p>
+
+      <section class="section">
+        <p class="label">Now</p>
+
+        <article id="balloon">
+          <h2>Hot-air balloon race replay &amp; wind simulator</h2>
+          <p class="meta">Final-year project · 2026–27 · in progress</p>
+          <figure><div class="placeholder">[ screenshot of the 3D replay ]</div></figure>
+          <p>A hot-air balloon can't steer sideways. It can only climb or descend, so pilots read the wind at different heights and pick the layer that carries them toward the target.</p>
+          <h3>Replay</h3>
+          <p>Imports a race's GPS logs and rebuilds every competitor's flight as a replay, possibly in 3D, so a whole race can be watched again from any angle.</p>
+          <h3>Wind simulator and navigation</h3>
+          <p>Simulates a realistic wind field and runs a navigation layer on top of it. During a replay you can see each real flight next to a better route the winds would have allowed.</p>
+          <p class="tags">[tech stack]</p>
+        </article>
+
+        <article id="solo-to-tab">
+          <h2>Solo to tab</h2>
+          <p class="meta">Side project · just starting</p>
+          <p>A tool that listens to a guitar solo and writes it out as tab a guitarist could actually play.</p>
+          <h3>Plan</h3>
+          <ul>
+            <li>Detect the notes from audio, starting with single-note solos.</li>
+            <li>Choose a fret for every note so the hand moves as little as possible, with no jumps from the 1st fret to the 12th.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <p class="label">Before</p>
+
+        <article id="crop-residue">
+          <h2><a href="https://github.com/ChickenPieLu/residue_coverage" target="_blank" rel="noreferrer">Crop residue coverage estimation ↗</a></h2>
+          <p class="meta">Completed · Summer 2026</p>
+          <figure><img src="../assets/images/crop-residue-test-result-row.png" width="1263" height="311" loading="lazy" alt="Field photo, ground-truth mask, U-Net prediction and error map for crop residue segmentation."></figure>
+          <p>An end-to-end computer vision project that segments crop residue in field photos and estimates how much of the ground it covers, with a focus on working at field sites the model has never seen.</p>
+          <h3>Approach</h3>
+          <p>Started from a Random Forest baseline, built a Mini U-Net from scratch, then trained a U-Net with an ImageNet-pretrained ResNet34 encoder. Data was split by location, and models were evaluated with IoU, Dice, precision, recall and coverage error, with SRPNet as an external reference.</p>
+          <h3>Results</h3>
+          <dl class="results">
+            <div><dt>Test IoU</dt><dd>0.826</dd></div>
+            <div><dt>Test Dice</dt><dd>0.905</dd></div>
+            <div><dt>Coverage MAE</dt><dd>7.71 pp</dd></div>
+          </dl>
+          <p>Compared with the Mini U-Net, IoU went from 0.778 to 0.826 and coverage error fell from 11.73 to 7.71 percentage points.</p>
+          <h3>What I did</h3>
+          <ul>
+            <li>Built the image and mask pairing, preprocessing, augmentation and PyTorch data pipeline.</li>
+            <li>Implemented the Random Forest baseline and the Mini U-Net.</li>
+            <li>Trained the final ResNet34 U-Net with BCE and Dice loss, early stopping and reproducible evaluation.</li>
+            <li>Studied how accuracy dropped across locations, visualised failure cases, and flagged label quality as a limit on evaluation.</li>
+          </ul>
+          <p class="tags">Python · PyTorch · segmentation_models_pytorch · scikit-learn</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>© 2026 Yuhe Lu</footer>
+  </div>
+</body>
+</html>
