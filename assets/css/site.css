@@ -49,7 +49,7 @@ h1 { font: 600 44px/1.15 var(--font-body); letter-spacing: -0.005em; margin: 0 0
 .meta { font: 400 13px/1.6 var(--font-mono); color: var(--muted); margin: 0; }
 p { margin: 0 0 1.1em; }
 .prose a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; transition: text-decoration-color .15s; }
-.prose a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.prose a:hover { text-decoration-color: var(--accent); }
 .home .prose a { font-family: var(--font-mono); font-size: 0.86em; }
 .label { font: 500 12px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .14em; color: var(--faint); }
 .soon { font: 400 11px/1.5 var(--font-mono); color: var(--faint); border: 1px solid var(--line); border-radius: 99px; padding: 1px 8px; white-space: nowrap; }
@@ -58,10 +58,11 @@ p { margin: 0 0 1.1em; }
 .home { min-height: 100svh; display: flex; flex-direction: column; padding-block: 28px; max-width: 40rem; margin: 0 auto; }
 .home main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-block: 48px; }
 .home .intro { margin-top: 36px; }
-.links { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 16px; margin-top: 12px; }
-.links a { color: var(--fg); }
-.links a:hover { color: var(--accent); }
-.links span { font: 400 0.86em var(--font-mono); color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
+.links { display: flex; align-items: center; gap: 18px; margin-top: 16px; }
+.links .icon-link { color: var(--muted); display: inline-grid; place-items: center; text-decoration: none; transition: color .15s; }
+.links .icon-link svg { width: 22px; height: 22px; display: block; }
+.links a.icon-link:hover { color: var(--accent); }
+.links .is-soon { opacity: .6; cursor: default; }
 .email { font: 400 13px var(--font-mono); color: var(--muted); user-select: all; }
 
 /* Subpages */
@@ -72,7 +73,7 @@ p { margin: 0 0 1.1em; }
 article + article { margin-top: 56px; }
 article h2 { font: 600 22px/1.35 var(--font-body); margin: 0 0 6px; }
 article h2 a { color: inherit; text-decoration: none; }
-article h2 a:hover { color: var(--accent); }
+article h2 a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
 article h3 { font: 600 15px/1.5 var(--font-body); margin: 24px 0 6px; }
 article .meta { margin-bottom: 16px; }
 article p, article li { color: var(--muted); }
