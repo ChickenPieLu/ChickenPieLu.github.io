@@ -10,8 +10,9 @@
     var btn = document.querySelector(".theme-toggle");
     if (!btn) return;
     btn.addEventListener("click", function () {
-      var dark = getComputedStyle(root).colorScheme.indexOf("dark") > -1;
-      var next = dark ? "light" : "dark";
+      var current = root.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = current === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
     });
