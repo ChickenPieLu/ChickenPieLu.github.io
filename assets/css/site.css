@@ -98,3 +98,10 @@ footer { margin-top: 80px; font: 400 12px/1.6 var(--font-mono); color: var(--fai
   .site-nav { gap: 16px; }
   .page-title { margin-top: 48px; }
 }
+
+/* About */
+.portrait { max-width: 240px; margin: 40px 0 0; }
+.portrait .placeholder { aspect-ratio: 4 / 5; }
+.about-block h2 { font: 600 22px/1.35 var(--font-body); margin: 0 0 10px; }
+.about-block p { color: var(--muted); }
+.about-block + .about-block { margin-top: 48px; }
