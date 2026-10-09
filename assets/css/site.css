@@ -35,7 +35,9 @@ body {
 
 /* Header */
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.home-link { font-weight: 600; color: var(--fg); text-decoration: none; }
+.home-link { color: var(--fg); text-decoration: none; display: inline-flex; }
+.logo-path { font: 700 15px/1 var(--font-mono); letter-spacing: -.01em; }
+.logo-path .tilde { color: var(--accent); }
 .site-nav { display: flex; align-items: center; gap: 22px; font-size: 15px; flex-wrap: wrap; }
 .site-nav a, .theme-toggle { color: var(--muted); text-decoration: none; transition: color .15s; }
 .site-nav a:hover, .site-nav a[aria-current="page"], .theme-toggle:hover { color: var(--fg); }
