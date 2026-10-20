@@ -38,6 +38,11 @@ body {
 .home-link { color: var(--fg); text-decoration: none; display: inline-flex; }
 .logo-path { font: 700 15px/1 var(--font-mono); letter-spacing: -.01em; }
 .logo-path .tilde { color: var(--accent); }
+.logo-sign { display: block; width: 59px; height: 30px; }
+.logo-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-light { display: none; } :root:not([data-theme="light"]) .logo-dark { display: block; } }
+:root[data-theme="dark"] .logo-light { display: none; }
+:root[data-theme="dark"] .logo-dark { display: block; }
 .site-nav { display: flex; align-items: center; gap: 22px; font-size: 15px; flex-wrap: wrap; }
 .site-nav a, .theme-toggle { color: var(--muted); text-decoration: none; transition: color .15s; }
 .site-nav a:hover, .site-nav a[aria-current="page"], .theme-toggle:hover { color: var(--fg); }
