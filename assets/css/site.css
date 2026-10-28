@@ -1,24 +1,24 @@
 /* Two faces only: Hanken Grotesk for everything you read, JetBrains Mono for small labels. */
 :root {
-  --bg: #fbfbf9;
-  --fg: #23262b;
-  --muted: #62666e;
-  --faint: #9a9fa7;
-  --line: #e6e7e3;
-  --accent: #0abab5;
+  --bg: #f8f3ea;
+  --fg: #2a1d1f;
+  --muted: #6e5f5d;
+  --faint: #a8999a;
+  --line: #e8dccb;
+  --accent: #8c2a3c;
   --font-body: "Hanken Grotesk", ui-sans-serif, -apple-system, "PingFang SC", "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #121315; --fg: #e4e4e2; --muted: #a2a6ad; --faint: #63676e; --line: #26282c;
-    --accent: #3fd0cb; color-scheme: dark;
+    --bg: #1a1213; --fg: #f3e6cf; --muted: #c4b5a5; --faint: #7d6c66; --line: #332626;
+    --accent: #e0899a; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #121315; --fg: #e4e4e2; --muted: #a2a6ad; --faint: #63676e; --line: #26282c;
-  --accent: #3fd0cb; color-scheme: dark;
+  --bg: #1a1213; --fg: #f3e6cf; --muted: #c4b5a5; --faint: #7d6c66; --line: #332626;
+  --accent: #e0899a; color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -39,6 +39,7 @@ body {
 .logo-path { font: 700 15px/1 var(--font-mono); letter-spacing: -.01em; }
 .logo-path .tilde { color: var(--accent); }
 .logo-sign { display: block; width: 59px; height: 30px; }
+.logo-mark { display: block; width: 32px; height: 32px; }
 .logo-dark { display: none; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-light { display: none; } :root:not([data-theme="light"]) .logo-dark { display: block; } }
 :root[data-theme="dark"] .logo-light { display: none; }
@@ -62,7 +63,9 @@ p { margin: 0 0 1.1em; }
 .soon { font: 400 11px/1.5 var(--font-mono); color: var(--faint); border: 1px solid var(--line); border-radius: 99px; padding: 1px 8px; white-space: nowrap; }
 
 /* Home: fits in one screen */
-.home { min-height: 100svh; display: flex; flex-direction: column; padding-block: 28px; max-width: 40rem; margin: 0 auto; }
+.home { min-height: 100svh; display: flex; flex-direction: column; padding-block: 28px; }
+.home main { width: 100%; max-width: 40rem; margin-inline: auto; }
+@media (min-width: 720px) { .home { padding-inline: 12px; } }
 .home main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-block: 48px; }
 .home .intro { margin-top: 36px; }
 .links { display: flex; align-items: center; gap: 18px; margin-top: 16px; }
