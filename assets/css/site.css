@@ -103,7 +103,7 @@ figure img { display: block; width: 100%; height: auto; }
 .note-list li { display: flex; gap: 16px; align-items: baseline; color: var(--muted); }
 .note-list .soon { flex: 0 0 auto; }
 
-footer { margin-top: 80px; font: 400 12px/1.6 var(--font-mono); color: var(--faint); }
+footer { margin-top: 80px; font: 400 12px/1.6 var(--font-mono); color: var(--faint); text-align: center; }
 .home footer { margin-top: 0; }
 
 @media (max-width: 480px) {
