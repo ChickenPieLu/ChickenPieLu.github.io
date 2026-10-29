@@ -31,7 +31,10 @@ body {
   -webkit-font-smoothing: antialiased;
   padding-inline: 20px;
 }
-.page { max-width: 40rem; margin: 0 auto; padding-block: 28px 64px; }
+/* Header and footer sit at the window edges; only main keeps the text column. */
+.page { padding-block: 28px 64px; }
+.page main { max-width: 40rem; margin-inline: auto; }
+@media (min-width: 720px) { .page { padding-inline: 12px; } }
 
 /* Header */
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
